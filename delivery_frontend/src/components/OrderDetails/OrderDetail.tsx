@@ -5,6 +5,8 @@ import Order from '../../app/Order';
 import { format } from 'date-fns';
 import '../OrderDetails/OrderDetails.css'; 
 
+const API_BASE_URL = process.env.REACT_APP_API_BASE_URL;
+
 function OrderDetail() {
   const { id } = useParams<{ id: string }>(); 
   const [order, setOrder] = useState<Order | null>(null);
@@ -16,7 +18,7 @@ function OrderDetail() {
     const fetchOrder = async () => {
       if (id) {
         try {
-          const response = await axios.get<Order>(`http://localhost:5224/Orders/${id}`);
+          const response = await axios.get<Order>(`${API_BASE_URL}/Orders/${id}`);
           setOrder(response.data);
           setLoading(false);
         } catch (error: any) {
@@ -32,7 +34,7 @@ function OrderDetail() {
   const handleDelete = async () => {
     if (order && order.id) {
       try {
-        await axios.delete(`http://localhost:5224/Orders/${order.id}`);
+        await axios.delete(`${API_BASE_URL}/Orders/${order.id}`);
         navigate('/orders'); 
       } catch (error: any) {
         setError(`Ошибка при удалении заказа: ${error.message}`);

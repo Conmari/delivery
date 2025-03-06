@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import { format } from 'date-fns';
 import '../OrdersList/OrdersList.css'
 
+const API_BASE_URL = process.env.REACT_APP_API_BASE_URL;
 
 function OrderList() {
     const [orders, setOrders] = useState<Order[]>([]);
@@ -14,7 +15,7 @@ function OrderList() {
     useEffect(() => {
       const fetchOrders = async () => {
         try {
-          const response = await axios.get<Order[]>('http://localhost:5224/Orders');
+          const response = await axios.get<Order[]>(`${API_BASE_URL}/Orders`);
           setOrders(response.data);
           setLoading(false);
         } catch (error: any) {

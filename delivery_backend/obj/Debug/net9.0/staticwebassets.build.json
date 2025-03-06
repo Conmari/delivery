@@ -1,0 +1,12 @@
+{
+  "Version": 1,
+  "Hash": "omxCr3jh/cuHMGgNDUhg4k2bPcSRuP+VyfGn2aY2nro=",
+  "Source": "delivery_backend",
+  "BasePath": "_content/delivery_backend",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": [],
+  "Endpoints": []
+}

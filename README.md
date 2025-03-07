@@ -3,6 +3,9 @@
  dotnet run
 ## Для запуска фронта
 npm start
+## Для БД(PostgreSQL)
+Создать необхдимые сущности в БД
+dotnet ef database update
 
 # Работа приложения
 ### форма добавления заказов
